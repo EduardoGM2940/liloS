@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+    font-family: 'Bungee', cursive;
+    background-image: url("fondo.jpg"); /* Fondo para la página */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo de la imagen del título */
+#titulo-imagen {
+    width: 100%;
+    max-width: 400px; /* Ajuste de tamaño para la imagen del título */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Contenedor del juego */
+#game-container {
+    background-image: url("fondoj.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+/* Texto con contorno negro */
+label, p, #resultado, #puntaje-acumulado {
+    color: #f8e71c;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Botones */
+button {
+    background-color: #ff6b6b;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ff3b3b;
+}
+
+/* Botón de mute */
+#mute-btn {
+    background-color: #ffaa00;
+    font-weight: bold;
+}
+
+/* Estilos adicionales */
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Contenedor del GIF con tamaño fijo */
+#gif-container {
+    margin-top: 20px;
+    width: 560px; /* Ancho del GIF */
+    height: 315px; /* Alto del GIF */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ocultar el GIF por defecto, sin modificar el tamaño del contenedor */
+#gif-img {
+    max-width: 80%;
+    max-height: 80%;
+    display: none;
+}

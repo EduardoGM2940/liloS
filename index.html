@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Lilo vs. Stitch</title>
+    
+    <!-- Enlace a Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS -->
+    <style>
+        /* Estilos para la ventana emergente */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Ancho de la ventana emergente */
+            color: #000;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagen en lugar del título -->
+    <img id="titulo-imagen" src="titulo.png" alt="Juego de Lilo vs. Stitch">
+    
+    <div id="game-container">
+        <!-- Contenido del juego -->
+        <p>Elige cuántas rondas jugar:</p>
+        <div>
+            <label for="num-rondas">Número de rondas:</label>
+            <input type="number" id="num-rondas" min="1" value="5">
+        </div>
+        <p>Elige tu estrategia para la ronda actual:</p>
+        <div>
+            <label for="player-strategy">Jugador:</label>
+            <select id="player-strategy">
+                <option value="lilo">Lilo</option>
+                <option value="stitch">Stitch</option>
+            </select>
+        </div>
+
+        <button onclick="calcularResultado()">Calcular Resultado</button>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+        <button id="mute-btn" onclick="toggleMute()">Silenciar</button>
+        
+        <div id="resultado"></div>
+        <div id="puntaje-acumulado"></div>
+        
+        <!-- Contenedor de GIF -->
+        <div id="gif-container">
+            <img id="gif-img" alt="Resultado GIF" />
+        </div>
+    </div>
+
+    <!-- Elemento de audio con autoplay -->
+    <audio id="background-music" src="Stitch.mp3" autoplay loop></audio>
+    <audio id="sound-effect" src="Stitch.mp3"></audio> <!-- Reemplaza la ruta por la ubicación de tu archivo de audio -->
+
+    <!-- Ventana emergente con instrucciones -->
+    <div id="instrucciones-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2>¡Aloha y bienvenidos al juego del Halcón y la Paloma: Edición Ohana!</h2>
+            
+            <p>¡Ohana significa familia, y la familia... ¡a veces se hace bromas! Pero esta vez, Lilo y Stitch se pasaron un poquito.  Jumba y Nani han sido víctimas de una de sus travesuras, y las reacciones no podrían ser más distintas.
+
+Nani, con su paciencia infinita, solo quiere hablar con los pequeños traviesos y resolver el conflicto pacíficamente.  Pero Jumba... ¡Jumba está furioso! Clama venganza y planea una contrabroma épica que hará temblar a la Tierra (y tal vez a algún planeta vecino).</p>
+          <p>En esta aventura, te meterás en la piel de Lilo (la Paloma) o Stitch (el Halcón) para saber si enfrentaras el conflicto en paz o salvajemente.</p>
+            
+            
+            <!-- Botón de inicio -->
+            <button onclick="iniciarJuegoConMusica()">Inicio</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
+    <script>
+        // Mostrar la ventana emergente al cargar la página
+        window.onload = function() {
+            document.getElementById("instrucciones-modal").style.display = "block";
+        };
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            document.getElementById("instrucciones-modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
