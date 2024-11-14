@@ -48,10 +48,10 @@ function calcularResultado() {
     let resultado = "";
 
     const payoff = {
-        "lilo-nani": [5, 0],
+        "lilo-nani": [5, 5],
         "lilo-jumba": [0, 10],
         "stitch-nani": [10, 0],
-        "stitch-jumba": [-5, -5]
+        "stitch-jumba": [0, 0]
     };
 
     const gifs = {
